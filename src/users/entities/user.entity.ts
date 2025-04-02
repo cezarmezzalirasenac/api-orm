@@ -12,6 +12,18 @@ export class User {
   @Column()
   email: string;
 
+  @Column()
+  document: string;
+
+  @Column()
+  birth_date: Date;
+
+  @Column()
+  phone_number: string;
+
+  @Column()
+  address: string;
+
   @OneToMany(() => Account, (account) => account.user)
   accounts: Account[];
 }
