@@ -24,6 +24,9 @@ export class User {
   @Column()
   address: string;
 
+  @Column()
+  active: boolean;
+
   @OneToMany(() => Account, (account) => account.user)
   accounts: Account[];
 }
