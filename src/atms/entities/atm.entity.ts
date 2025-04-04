@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Transaction } from 'src/transactions/entities/transaction.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('atms')
 export class Atm {
@@ -16,4 +17,7 @@ export class Atm {
 
   @Column()
   updated_at: Date;
+
+  @OneToMany(() => Transaction, (transaction) => transaction.atm)
+  transactions: Transaction[];
 }
